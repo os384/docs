@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>os384 Shard Viewer</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-color: #0f0f14;
+      color: #e2e2e2;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #1a1a24;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      color: #60a5fa;
+      margin-top: 0;
+    }
+    
+    .status {
+      padding: 15px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      background-color: #2d2d3a;
+    }
+    
+    .status.error {
+      background-color: rgba(220, 38, 38, 0.2);
+      color: #ef4444;
+    }
+    
+    .status.success {
+      background-color: rgba(34, 197, 94, 0.2);
+      color: #22c55e;
+    }
+    
+    .content-frame {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 6px;
+      background-color: white;
+    }
+    
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+    }
+    
+    .spinner {
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top: 4px solid #60a5fa;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>os384 Shard Viewer</h1>
+    <div id="status" class="status">Loading shard information...</div>
+    <div id="loader" class="loading">
+      <div class="spinner"></div>
+    </div>
+    <div id="content" style="display: none;">
+      <iframe id="content-frame" class="content-frame" sandbox="allow-scripts"></iframe>
+    </div>
+  </div>
+
+  <script type="module">
+    // Load the os384 library from the CDN
+    import * as os384 from 'https://c3.384.dev/api/v2/page/7938Nx0wM39T/384.esm.js';
+    
+    const statusEl = document.getElementById('status');
+    const loaderEl = document.getElementById('loader');
+    const contentEl = document.getElementById('content');
+    const iframeEl = document.getElementById('content-frame');
+    
+    async function initShardViewer() {
+      try {
+        // Get the handle from the URL hash
+        const hash = window.location.hash.substring(1);
+        
+        if (!hash) {
+          throw new Error('No shard handle found in URL. Use a valid share link.');
+        }
+        
+        // Decode the handle
+        const handleJson = atob(hash);
+        const handle = JSON.parse(handleJson);
+        
+        // Validate the handle
+        if (!handle.id || !handle.key || !handle.verification || !handle.storageServer) {
+          throw new Error('Invalid shard handle. Required fields are missing.');
+        }
+        
+        statusEl.textContent = 'Fetching and decrypting shard data...';
+        
+        // Fetch the shard data using os384's fetchDataFromHandle function
+        const data = await os384.fetchDataFromHandle(handle);
+        
+        // Convert the binary payload to text
+        const content = new TextDecoder().decode(data.payload);
+        
+        // Display the content in the iframe
+        iframeEl.srcdoc = content;
+        
+        // Show the content and update status
+        loaderEl.style.display = 'none';
+        contentEl.style.display = 'block';
+        statusEl.textContent = 'Shard loaded successfully!';
+        statusEl.className = 'status success';
+        
+      } catch (error) {
+        // Handle errors
+        console.error('Error loading shard:', error);
+        statusEl.textContent = `Error: ${error.message}`;
+        statusEl.className = 'status error';
+        loaderEl.style.display = 'none';
+      }
+    }
+    
+    // Initialize the viewer when the page loads
+    window.addEventListener('DOMContentLoaded', initShardViewer);
+  </script>
+</body>
+</html> 

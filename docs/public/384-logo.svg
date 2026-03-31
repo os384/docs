@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" width="200" height="100">
+  <style>
+    .text { font-family: 'Arial', sans-serif; font-weight: bold; }
+    .number { fill: #E0674F; }
+    .sdk { fill: #FFFFFF; font-size: 24px; }
+  </style>
+  <text x="50" y="65" class="text number" font-size="60">384</text>
+  <text x="155" y="65" class="text sdk">SDK</text>
+</svg> 
