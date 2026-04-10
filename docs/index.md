@@ -26,3 +26,5 @@ features:
   - title: Browser-native
     details: No app to install. Apps run at 384.dev in isolated subdomains. URI fragments keep content private.
 ---
+
+<AiPromptBox />

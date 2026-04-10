@@ -113,23 +113,7 @@ export default withMermaid(defineConfig({
           { text: 'Shoulders of Giants', link: '/further-reading' },
         ],
       },
-      {
-        text: 'What About…?',
-        collapsed: true,
-        items: [
-          { text: 'Overview', link: '/whatabout/' },
-          { text: 'Signal', link: '/whatabout/signal' },
-          { text: 'Matrix / Element', link: '/whatabout/matrix' },
-          { text: 'Telegram', link: '/whatabout/telegram' },
-          { text: 'Proton', link: '/whatabout/proton' },
-          { text: 'WhatsApp', link: '/whatabout/whatsapp' },
-          { text: 'IPFS', link: '/whatabout/ipfs' },
-          { text: 'Nextcloud', link: '/whatabout/nextcloud' },
-          { text: 'Solid', link: '/whatabout/solid' },
-          { text: 'Keybase', link: '/whatabout/keybase' },
-          { text: 'Session', link: '/whatabout/session' },
-        ],
-      },
+      // 'What About…?' comparisons moved to docs/_whatabout/ for possible future use
     ],
 
     socialLinks: [
