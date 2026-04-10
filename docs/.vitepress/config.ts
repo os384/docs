@@ -1,12 +1,21 @@
 import { defineConfig } from 'vitepress';
 import { withMermaid } from 'vitepress-plugin-mermaid';
 import footnote from 'markdown-it-footnote';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+
+// Read prefix from 384.manifest.json (in public/ so it's also copied to dist)
+const manifest = JSON.parse(
+  readFileSync(resolve(__dirname, '../public/384.manifest.json'), 'utf-8')
+);
+const base = `/${manifest.prefix}/`;
 
 export default withMermaid(defineConfig({
   lang: 'en-US',
   title: 'os384',
   description: 'os384 — Sovereign computing platform built on P-384 cryptography.',
 
+  base,
   appearance: 'dark',
   ignoreDeadLinks: true,
 
@@ -17,7 +26,7 @@ export default withMermaid(defineConfig({
   },
 
   head: [
-    ['link', { rel: 'icon', href: '/os384-logo.svg' }],
+    ['link', { rel: 'icon', href: `${base}os384-logo.svg` }],
     // Load lib384 globally for interactive components
     ['script', { type: 'module' }, `
       if (typeof window !== 'undefined') {
@@ -129,7 +138,7 @@ export default withMermaid(defineConfig({
 
     footer: {
       message: 'Copyright (C) 2022–2026, 384, Inc. "384" and "os384" are registered trademarks.',
-      copyright: 'All rights reserved.',
+      copyright: `All rights reserved. v${manifest.version}`,
     },
 
     search: {

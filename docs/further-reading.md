@@ -253,7 +253,7 @@ that Davidson and Rees-Mogg assumed would simply emerge on its own.
 
 ## Free Software and the AGPL
 
-os384's insistence on Affero GPL v3 licensing for all components
+os384's insistence on Affero AGPLv3 licensing for all components
 reflects a lineage that goes back to Richard Stallman's GNU Manifesto
 (1985)[^stallman] and the Free Software Foundation. Stallman's core
 argument — that users of software should have the freedom to study,
@@ -268,7 +268,7 @@ the rise of "software as a service" created a loophole: companies
 could use open source code to deliver online services without ever
 "distributing" the code, thereby evading the GPL's copyleft trigger.
 
-The Affero GPL (AGPL, or GPL v3 with the network-use clause) closes
+The Affero GPL (AGPL, or AGPLv3 with the network-use clause) closes
 this loophole by extending the copyleft trigger to network delivery.
 os384's position — that any communication platform claiming to be
 open source *should* use an Affero-style license — is a direct

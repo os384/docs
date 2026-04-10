@@ -1,0 +1,34 @@
+{
+  "lang": "en",
+    "short_name": "os384docs",
+    "prefix": "BhoW6b",
+    "name": "OS384 Documentation",
+    "description": "Documentation (static) app build of os384 docs.",
+    "version": "0.20260408.0",
+    "author": "Peter Magnusson",
+    "vault": true,
+    "mode": "development",
+    "keywords": [
+	"web3",
+	"os384",
+	"384"
+    ],
+    "channels": [
+	{
+	    "name": "budget",
+	    "size": 16000000
+	},
+	{
+	    "name": "ledger",
+	    "size": 4000000
+	}
+    ],
+    "socialProof": [
+	{
+	    "source": "384, Inc.",
+	    "website": "https://384.co",
+	    "github": "os384"
+	}
+    ],
+    "appid": "j0vAzkME8kBhoW6b_20260408_01"
+}

@@ -1,0 +1,1 @@
+import{_ as a,o as t,c as i,ah as n}from"./chunks/framework.C8Zd3T50.js";const u=JSON.parse('{"title":"Wallets","description":"","frontmatter":{},"headers":[],"relativePath":"wallet.md","filePath":"wallet.md"}'),o={name:"wallet.md"};function r(l,e,s,c,h,d){return t(),i("div",null,[...e[0]||(e[0]=[n("",36)])])}const g=a(o,[["render",r]]);export{u as __pageData,g as default};

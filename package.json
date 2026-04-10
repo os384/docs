@@ -3,6 +3,7 @@
   "type": "module",
   "packageManager": "pnpm@10.32.1",
   "scripts": {
+    "clean": "rm -rf docs/.vitepress/cache docs/.vitepress/dist",
     "dev": "vitepress dev docs --host 0.0.0.0",
     "build": "vitepress build docs --ignore-dead-links",
     "preview": "vitepress preview docs"

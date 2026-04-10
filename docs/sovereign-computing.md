@@ -79,7 +79,7 @@ Where typical approaches to data sovereignty emphasize national jurisdiction and
   Most services advertising "end-to-end encryption" still require trusting servers for key management. 384 flips this by empowering users with genuine ownership and control over their keys, reducing server-side vulnerabilities.
 
 - **Open Source, Open Possibilities**:  
-  Proprietary software often hides critical functions, risking vendor lock-in. 384 instead chooses an open-source model (GPL v3 or similar licenses), enabling transparency, collaboration, independent verification, and robust community-driven development. Interoperability is fundamental, freeing users from single-vendor ecosystems.
+  Proprietary software often hides critical functions, risking vendor lock-in. 384 instead chooses an open-source model (AGPLv3 or similar licenses), enabling transparency, collaboration, independent verification, and robust community-driven development. Interoperability is fundamental, freeing users from single-vendor ecosystems.
 
 ## Practical Significance and Impact
 

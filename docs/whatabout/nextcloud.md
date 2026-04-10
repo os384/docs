@@ -12,7 +12,7 @@ become clear.
 
 ## Open Source — Done Right
 
-Nextcloud is licensed under AGPL v3. All components — server, clients,
+Nextcloud is licensed under AAGPLv3. All components — server, clients,
 and apps — are under this license. Development happens in the open on
 GitHub. This is exactly what os384's criteria require, and Nextcloud
 deserves unqualified credit for it.

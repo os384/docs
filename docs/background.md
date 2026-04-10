@@ -62,7 +62,7 @@ Historically, this would have been very difficult to do much about. But there ha
 
 Before getting to that, let us try to be more concrete. The following list introduces the requirements that any solution *should* meet. When we apply these criteria to all the options available today, not a single one fulfills all of them:
 
-- **Afero/GPL v3 open source licensing** for the entire system (all minimally necessary parts). See the Open Source section below for detailed explanation.
+- **AAGPLv3 open source licensing** for the entire system (all minimally necessary parts). See the Open Source section below for detailed explanation.
 - **Interoperable** — the design must be open to connecting to other instances, following open standards or well-documented, open-sourced protocols.
 - **User control** — any user should be able to "pick up and leave" and retain access to all of their data, including data shared with them, contact information, and communication records with any other user.
 - **Vendor independent** — a single vendor can be a core facilitator, but artificial lock-ins are not acceptable.
@@ -89,11 +89,15 @@ The **Afero-style licensing** issue merits elaboration. The Open Source movement
 
 This was before the modern Internet. Along came companies like Yahoo, eBay, Google, and Amazon, who discovered they could absorb the entire open source world, make all the improvements they wanted, and — since they ran the code on their own computers and offered an "online service" rather than distributing it — they never had to contribute back.
 
-This created a crisis. The Open Source movement responded with new licenses. Notably, **GPL v3** (the "Afero" license) adds a new trigger: using the software to deliver any online service forces the provider to share any changes and additions. Any communication project should "obviously" be distributed under GPL v3. But few are.
+This created a crisis. The Open Source movement responded with new licenses.
+Notably, **AGPLv3** (the "Afero" license) adds a new trigger: using the software
+to deliver any online service forces the provider to share any changes and
+additions. The current consensus is that any communication-oriented "open
+source" project should be AGPLv3, but few are.
 
 What we consider necessary beyond simply stating "we are open source":
 
-- Only GPL v3 or similar license is acceptable.
+- Only AGPLv3 or similar license is acceptable.
 - All parts of the system should be available under open source, with no variations.
 - There shouldn't be any parts that are not available — including documentation, test suites, and so forth.
 - Development should be done in the open, so anybody can join in or at minimum follow along.
@@ -169,7 +173,7 @@ os384's design addresses all of the above. Among the relevant properties:
 - Public key identifiers are unique per participant per channel, providing unlinkability by default.
 - All communication is end-to-end encrypted; key management is initially server-assisted, but Owners can take full control at any time.
 - Participants can export and migrate their full channel state — keys, history, participant list — to another server or client whenever they choose.
-- All parts are open source under GPL v3.
+- All parts are open source under AGPLv3.
 
 ## On Trust
 

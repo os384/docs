@@ -1,6 +1,8 @@
 # VitePress build output
-docs/.vitepress/dist/
 docs/.vitepress/cache/
+
+# actually we version control this
+# docs/.vitepress/dist/
 
 # Dependencies
 node_modules/
@@ -14,3 +16,4 @@ pnpm-lock.yaml
 .DS_Store
 *.swp
 .vscode/settings.json
+*~
