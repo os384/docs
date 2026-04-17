@@ -113,6 +113,14 @@ export default withMermaid(defineConfig({
           { text: 'Shoulders of Giants', link: '/further-reading' },
         ],
       },
+      {
+        text: 'Roadmap',
+        collapsed: false,
+        items: [
+          { text: 'Overview', link: '/dp/' },
+          { text: 'DP-01: Root Security', link: '/dp/DP-01-Root-Security' },
+        ],
+      },
       // 'What About…?' comparisons moved to docs/_whatabout/ for possible future use
     ],
 
